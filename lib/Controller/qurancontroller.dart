@@ -10,7 +10,9 @@ class qurancontroller extends GetxController {
   Rx<ArabicModel> arabiclists = ArabicModel().obs;
   Rx<BanglaQuran> banglalists = BanglaQuran().obs;
   Rx<EngModel> englishlists = EngModel().obs;
-  var searchlist = List().obs;
+
+  var searchlist = List<Datum>().obs;
+  var onlylist = List<Datum>().obs;
 
   var min = 10.0.obs;
   var max = 100.0.obs;
@@ -33,7 +35,10 @@ class qurancontroller extends GetxController {
   void onInit() {
     apicalled.fetchdata().then((value) {
       surahlists.value = value;
+      onlylist.value = surahlists.value.data;
+      searchlist.value = surahlists.value.data;
     });
+
     super.onInit();
   }
 }
