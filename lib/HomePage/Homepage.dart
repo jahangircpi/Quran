@@ -39,24 +39,6 @@ class homepage extends StatelessWidget {
         },
         child: Scaffold(
             appBar: AppBar(
-              actions: [
-                IconButton(
-                    icon: Icon(Icons.font_download_sharp),
-                    onPressed: () {
-                      Get.bottomSheet(
-                          Row(
-                            children: [
-                              Container(
-                                child: Text("hello"),
-                                height: 100,
-                                color: Colors.white,
-                                width: size.width,
-                              ),
-                            ],
-                          ),
-                          enableDrag: true);
-                    })
-              ],
               centerTitle: true,
               title: Text("Al-Quran"),
             ),
